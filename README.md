@@ -36,3 +36,8 @@ cp ../memorial.exr ./
 | `src/student_func.cu`    | Parallel calculation      |
 
 
+## Steps
+
+1. Load image
+2. (*PARALELLIZABLE*) Covert to Luminance
+3. Make bins

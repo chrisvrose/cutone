@@ -6,7 +6,7 @@
 #include <string>
 #include <stdio.h>
 #include <algorithm>
-
+#include<ctime>
 #include <compare.hpp>
 #include <reference_calc.hpp>
 // Functions from HW3.cu
@@ -27,8 +27,8 @@ int main(int argc, char **argv) {
   std::string input_file;
   std::string output_file;
   std::string reference_file;
-  double perPixelError = 0.0;
-  double globalError   = 0.0;
+  double perPixelError = 1.0;
+  double globalError   = 10.0;
   bool useEpsCheck = false;
 
   switch (argc)
@@ -74,7 +74,7 @@ int main(int argc, char **argv) {
                                numRows, numCols, numBins);
   timer.Stop();
   cudaDeviceSynchronize(); checkCudaErrors(cudaGetLastError());
-  int err = printf("Your code ran in: %f msecs.\n", timer.Elapsed());
+  int err = printf("Your parallel code ran in: %f msecs.\n", timer.Elapsed());
 
   if (err < 0) {
     //Couldn't print! Probably the student closed stdout - bad news
@@ -95,7 +95,13 @@ int main(int argc, char **argv) {
     max_logLum = std::max(h_luminance[i], max_logLum);
   }
   // run the reference valulations
+  clock_t begin = clock();
+
   referenceCalculation(h_luminance, h_cdf, numRows, numCols, numBins, min_logLum, max_logLum);
+  clock_t begin = clock();
+  double time_spent = (double)(end - begin) / (CLOCKS_PER_SEC/1000);
+  printf("Your serial code ran in: %f msecs.\n", time_spent);
+
 
   checkCudaErrors(cudaMemcpy(d_cdf, h_cdf, sizeof(unsigned int) * numBins, cudaMemcpyHostToDevice));
 

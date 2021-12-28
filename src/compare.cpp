@@ -34,6 +34,6 @@ void compareImages(std::string reference_filename, std::string test_filename, bo
     checkResultsExact(referencePtr, testPtr, reference.rows * reference.cols * reference.channels());
   }
 
-  std::cout << "PASS" << std::endl;
+  std::cout << "PASS for errors"<<perPixelError<<" per pixel and "<<globalError<<" globally" << std::endl;
   return;
 }
