@@ -9,25 +9,12 @@
 
 #include "compare.h"
 #include "reference_calc.h"
-
 // Functions from HW3.cu
-void preProcess(float **d_luminance, unsigned int **d_cdf,
-                size_t *numRows, size_t *numCols, unsigned int *numBins,
-                const std::string& filename);
+#include "HW3.h"
 
-void postProcess(const std::string& output_file, size_t numRows, size_t numCols,
-                 float min_logLum, float max_logLum);
-
-void cleanupGlobalMemory(void);
 
 // Function from student_func.cu
-void your_histogram_and_prefixsum(const float* const d_luminance,
-                                  unsigned int* const d_cdf,
-                                  float &min_logLum,
-                                  float &max_logLum,
-                                  const size_t numRows,
-                                  const size_t numCols,
-                                  const size_t numBins);
+#include "student_func.h"
 
 
 int main(int argc, char **argv) {

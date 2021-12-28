@@ -2,7 +2,7 @@
 #include <string>
 #include "loadSaveImage.h"
 #include <thrust/extrema.h>
-
+#include "HW3.h"
 //chroma-LogLuminance Space
 static float *d_x__;
 static float *d_y__;

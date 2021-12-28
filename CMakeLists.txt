@@ -13,14 +13,24 @@ find_package( OpenCV REQUIRED )
 find_package(CUDA REQUIRED)
 
 
-include_directories( ${OpenCV_INCLUDE_DIRS} )
-include_directories(/opt/cuda/include)
+include_directories( ${OpenCV_INCLUDE_DIRS} 
+/opt/cuda/include
+include
+)
+include_directories()
 enable_language(CUDA)
 link_libraries( ${OpenCV_LIBS} )
 
 
 
-add_executable(main HW3.cu main.cpp student_func.cu compare.cpp reference_calc.cpp loadSaveImage.cpp )
+add_executable(main 
+    src/HW3.cu
+    src/main.cpp
+    src/student_func.cu
+    src/compare.cpp
+    src/reference_calc.cpp
+    src/loadSaveImage.cpp
+)
 
 set_property(TARGET main PROPERTY CUDA_ARCHITECTURES "35;50;72")
 
