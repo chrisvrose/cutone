@@ -74,7 +74,8 @@ int main(int argc, char **argv) {
                                numRows, numCols, numBins);
   timer.Stop();
   cudaDeviceSynchronize(); checkCudaErrors(cudaGetLastError());
-  int err = printf("Your parallel code ran in: %f msecs.\n", timer.Elapsed());
+  float parallel_time = timer.Elapsed();
+  int err = printf("Your parallel code ran in: %f msecs.\n", parallel_time);
 
   if (err < 0) {
     //Couldn't print! Probably the student closed stdout - bad news
@@ -99,9 +100,10 @@ int main(int argc, char **argv) {
 
   referenceCalculation(h_luminance, h_cdf, numRows, numCols, numBins, min_logLum, max_logLum);
   clock_t endc = clock();
-  double time_spent = (double)(endc - beginc) / (CLOCKS_PER_SEC/1000);
-  printf("Your serial code ran in: %f msecs.\n", time_spent);
+  double serial_time = (double)(endc - beginc) / (CLOCKS_PER_SEC/1000);
+  printf("Your serial code ran in: %f msecs.\n", serial_time);
 
+  printf("Acceleration factor = %f\n", (serial_time/parallel_time));
 
   checkCudaErrors(cudaMemcpy(d_cdf, h_cdf, sizeof(unsigned int) * numBins, cudaMemcpyHostToDevice));
 
