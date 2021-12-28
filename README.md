@@ -16,8 +16,18 @@ cmake ..
 make
 ```
 
+## Executing
 
+```sh
+# Be in the build
+cd build
+# Copy this nice image
+cp ../memorial.exr ./
+# run for this
+./main ../memorial.exr
+```
 
+## Development 
 | file                     | desc                      |
 | ------------------------ | :------------------------ |
 | `src/compare.cpp`        | comparing 2 imgs          |
