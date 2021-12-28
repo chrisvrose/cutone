@@ -14,7 +14,7 @@ find_package(CUDA REQUIRED)
 
 
 include_directories( ${OpenCV_INCLUDE_DIRS} 
-/opt/cuda/include
+${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES}
 include
 )
 include_directories()
