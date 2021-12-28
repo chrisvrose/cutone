@@ -95,11 +95,11 @@ int main(int argc, char **argv) {
     max_logLum = std::max(h_luminance[i], max_logLum);
   }
   // run the reference valulations
-  clock_t begin = clock();
+  clock_t beginc = clock();
 
   referenceCalculation(h_luminance, h_cdf, numRows, numCols, numBins, min_logLum, max_logLum);
-  clock_t begin = clock();
-  double time_spent = (double)(end - begin) / (CLOCKS_PER_SEC/1000);
+  clock_t endc = clock();
+  double time_spent = (double)(endc - beginc) / (CLOCKS_PER_SEC/1000);
   printf("Your serial code ran in: %f msecs.\n", time_spent);
 
 
