@@ -1,8 +1,8 @@
-#include "utils.h"
+#include <utils.hpp>
 #include <string>
-#include "loadSaveImage.h"
+#include <loadSaveImage.hpp>
 #include <thrust/extrema.h>
-#include "HW3.h"
+#include <HW3.cuh>
 //chroma-LogLuminance Space
 static float *d_x__;
 static float *d_y__;

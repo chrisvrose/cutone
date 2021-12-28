@@ -1,20 +1,20 @@
 //Udacity HW3 Driver
 
 #include <iostream>
-#include "timer.h"
-#include "utils.h"
+#include <timer.hpp>
+#include <utils.hpp>
 #include <string>
 #include <stdio.h>
 #include <algorithm>
 
-#include "compare.h"
-#include "reference_calc.h"
+#include <compare.hpp>
+#include <reference_calc.hpp>
 // Functions from HW3.cu
-#include "HW3.h"
+#include <HW3.cuh>
 
 
 // Function from student_func.cu
-#include "student_func.h"
+#include <student_func.cuh>
 
 
 int main(int argc, char **argv) {

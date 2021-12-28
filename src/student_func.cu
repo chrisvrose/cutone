@@ -59,13 +59,13 @@
   steps.
 */
 
-#include "utils.h"
+#include <utils.hpp>
 #include "device_launch_parameters.h"
 //#include "reference_calc.cpp"
 #include <stdio.h>
 #include <float.h>
 #include <limits.h>
-#include "student_func.h"
+#include <student_func.cuh>
 
 const int BLOCK_SIZE = 1024;
 
