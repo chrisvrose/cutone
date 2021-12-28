@@ -57,7 +57,7 @@ int main(int argc, char **argv) {
       globalError   = atof(argv[5]);
 	  break;
 	default:
-      std::cerr << "Usage: ./HW3 input_file [output_filename] [reference_filename] [perPixelError] [globalError]" << std::endl;
+      std::cerr << "Usage: <<"<<argv[0] <<" input_file [output_filename] [reference_filename] [perPixelError] [globalError]" << std::endl;
       exit(1);
   }
   //load the image and give us our input and output pointers
@@ -69,7 +69,7 @@ int main(int argc, char **argv) {
   min_logLum = 0.f;
   max_logLum = 1.f;
   timer.Start();
-  //call the students' code
+  //call the tonemapping algo
   your_histogram_and_prefixsum(d_luminance, d_cdf, min_logLum, max_logLum,
                                numRows, numCols, numBins);
   timer.Stop();
@@ -94,7 +94,7 @@ int main(int argc, char **argv) {
 	min_logLum = std::min(h_luminance[i], min_logLum);
     max_logLum = std::max(h_luminance[i], max_logLum);
   }
-
+  // run the reference valulations
   referenceCalculation(h_luminance, h_cdf, numRows, numCols, numBins, min_logLum, max_logLum);
 
   checkCudaErrors(cudaMemcpy(d_cdf, h_cdf, sizeof(unsigned int) * numBins, cudaMemcpyHostToDevice));
