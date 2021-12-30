@@ -2,7 +2,7 @@
 #include <string>
 #include <loadSaveImage.hpp>
 #include <thrust/extrema.h>
-#include <HW3.cuh>
+#include <tonemap.cuh>
 //chroma-LogLuminance Space
 static float *d_x__;
 static float *d_y__;

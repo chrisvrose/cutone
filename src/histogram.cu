@@ -65,7 +65,7 @@
 #include <stdio.h>
 #include <float.h>
 #include <limits.h>
-#include <student_func.cuh>
+#include <histogram.cuh>
 
 const int BLOCK_SIZE = 1024;
 

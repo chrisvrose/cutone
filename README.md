@@ -33,7 +33,7 @@ cp ../memorial.exr ./
 | `src/compare.cpp`        | comparing 2 imgs          |
 | `src/loadSaveImage.cpp`  | loading and saving images |
 | `src/reference_calc.cpp` | Reference calculation     |
-| `src/student_func.cu`    | Parallel calculation      |
+| `src/histogram.cu`    | Parallel calculation      |
 
 
 ## Steps

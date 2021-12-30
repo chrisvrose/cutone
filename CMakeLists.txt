@@ -24,9 +24,9 @@ link_libraries( ${OpenCV_LIBS} )
 
 
 add_executable(main 
-    src/HW3.cu
+    src/tonemap.cu
     src/main.cpp
-    src/student_func.cu
+    src/histogram.cu
     src/compare.cpp
     src/reference_calc.cpp
     src/loadSaveImage.cpp
