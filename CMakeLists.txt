@@ -32,6 +32,6 @@ add_executable(main
     src/loadSaveImage.cpp
 )
 
-set_property(TARGET main PROPERTY CUDA_ARCHITECTURES "60;61;62;70;72")
+set_property(TARGET main PROPERTY CUDA_ARCHITECTURES "61;75")
 
 # CUDA_ADD_EXECUTABLE(HW1 ${HW1_files} ${hdr} ${cu})
