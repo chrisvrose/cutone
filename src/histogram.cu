@@ -1,4 +1,4 @@
-/* Udacity Homework 3
+/* 
    HDR Tone-mapping
   Background HDR
   ==============
@@ -65,6 +65,7 @@
 #include <stdio.h>
 #include <float.h>
 #include <limits.h>
+
 #include <histogram.cuh>
 
 const int BLOCK_SIZE = 1024;
