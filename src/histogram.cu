@@ -176,7 +176,7 @@ unsigned int* compute_histogram(const float* const d_logLuminance, int numBins, 
     return d_histo;
 }
 
-void your_histogram_and_prefixsum(const float* const d_logLuminance,
+void gpu_histogram_and_prefixsum(const float* const d_logLuminance,
     unsigned int* const d_cdf,
     float &min_logLum,
     float &max_logLum,
@@ -184,7 +184,7 @@ void your_histogram_and_prefixsum(const float* const d_logLuminance,
     const size_t numCols,
     const size_t numBins)
 {
-    /*Here are the steps you need to implement
+    /*Here are the steps
       1) find the minimum and maximum value in the input logLuminance channel
          store in min_logLum and max_logLum
       2) subtract them to find the range

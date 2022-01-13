@@ -1,4 +1,4 @@
-void your_histogram_and_prefixsum(const float* const d_luminance,
+void gpu_histogram_and_prefixsum(const float* const d_luminance,
                                   unsigned int* const d_cdf,
                                   float &min_logLum,
                                   float &max_logLum,

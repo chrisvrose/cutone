@@ -73,7 +73,7 @@ int main(int argc, char** argv) {
     max_logLum = 1.f;
     timer.Start();
     // call the tonemapping algo
-    your_histogram_and_prefixsum(d_luminance, d_cdf, min_logLum, max_logLum,
+    gpu_histogram_and_prefixsum(d_luminance, d_cdf, min_logLum, max_logLum,
                                  numRows, numCols, numBins);
     timer.Stop();
     cudaDeviceSynchronize();
