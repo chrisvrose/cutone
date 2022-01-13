@@ -19,8 +19,8 @@ static const int numBins = 1024;
 size_t numRows__;
 size_t numCols__;
 
-/* Copied from Mike's IPython notebook with some minor modifications
- * Mainly double precision constants to floats and log10 -> log10f
+/* 
+ * double precision constants to floats and log10 -> log10f
  * Also removed Luminance (Y) channel since it is never used       eke*/
 
 __global__ void rgb_to_xyY(
@@ -61,8 +61,8 @@ __global__ void rgb_to_xyY(
   }
 }
 
-/* Copied from Mike's IPython notebook *
-   Modified just by having threads read the 
+/* 
+   Have threads read the 
    normalization constant directly from device memory
    instead of copying it back                          */
 
@@ -87,8 +87,8 @@ __global__ void normalize_cdf(
 }
 
 
-/* Copied from Mike's IPython notebook *
-   Modified double constants -> float  *
+/* 
+   double constants -> float  *
    Perform tone mapping based upon new *
    luminance scaling                   */
 
